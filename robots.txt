@@ -16,6 +16,5 @@ Allow: /tours/
 Allow: /media/
 
 # Sitemap (update with your actual domain)
-# You can use either static sitemap.xml or dynamic generate-sitemap.php
+# Dynamic sitemap that includes all tours and media automatically
 Sitemap: https://roniplus.ae/sitemap.xml
-Sitemap: https://roniplus.ae/generate-sitemap.php

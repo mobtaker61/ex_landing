@@ -1,33 +1,30 @@
 <?php
 /**
- * Static Sitemap Generator
- * This file generates a static sitemap.xml file
- * 
- * Usage: 
- * 1. Access via browser: https://yourdomain.com/generate-sitemap.php
- * 2. Copy the output and save as sitemap.xml
- * 3. Or run via command line: php generate-sitemap.php > sitemap.xml
- * 
- * Note: For automatic dynamic sitemap, use sitemap.php instead
+ * Dynamic Sitemap Generator
+ * This file generates sitemap.xml dynamically
+ * Access via: https://yourdomain.com/sitemap.php
+ * Or rename to sitemap.xml and configure .htaccess to execute PHP
  */
 
 require_once __DIR__ . '/includes/functions.php';
 
-header('Content-Type: application/xml; charset=utf-8');
-
-// Get site URL - Update with your actual domain for production
+// Get site URL
 $siteUrl = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
 $siteUrl .= "://" . $_SERVER['HTTP_HOST'];
 $siteUrl .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
 $siteUrl = rtrim($siteUrl, '/');
 
-// For production, uncomment and set your domain:
+// For production, you can hardcode:
 // $siteUrl = "https://roniplus.ae";
 
 // Get all tours and media
 $tours = getTours();
 $media = getMedia();
 
+// Set content type
+header('Content-Type: application/xml; charset=utf-8');
+
+// Output XML
 echo '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
 echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"' . "\n";
 echo '        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"' . "\n";

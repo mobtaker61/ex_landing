@@ -3,6 +3,9 @@
 # Enable rewrite engine
 RewriteEngine On
 
+# Sitemap - execute PHP if sitemap.xml is requested
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
 # Redirect to index.php if file doesn't exist
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
