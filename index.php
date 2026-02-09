@@ -1,0 +1,344 @@
+<?php
+require_once __DIR__ . '/includes/functions.php';
+
+// Load tours and media data
+$tours = getTours();
+$media = getMedia();
+
+// Get first 3 items for homepage
+$featuredMedia = array_slice($media, 0, 3);
+$featuredTours = array_slice($tours, 0, 3);
+?>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Exhibition Media Services - RoniPlus</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Header -->
+    <?php include 'includes/header.php'; ?>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center min-vh-75">
+                <div class="col-lg-6">
+                    <h1 class="display-3 fw-bold mb-4">Special Exhibition Media Services</h1>
+                    <p class="lead mb-4">
+                        Professional 360° Virtual Tours and Media Packages for exhibitions, events, and businesses.
+                        Experience immersive virtual environments and high-quality media solutions.
+                    </p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <a href="#media" class="btn btn-primary btn-lg">
+                            <i class="bi bi-play-circle me-2"></i>View Media Packages
+                        </a>
+                        <a href="#tours" class="btn btn-outline-primary btn-lg">
+                            <i class="bi bi-camera-video me-2"></i>Explore Virtual Tours
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <i class="bi bi-camera-reels display-1 text-primary"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Packages Section -->
+    <section id="media" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Media Packages</h2>
+                    <p class="section-subtitle">High-quality media solutions for your exhibitions</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <?php if (empty($featuredMedia)): ?>
+                    <div class="col-12 text-center py-5">
+                        <p class="text-muted">No media packages available yet.</p>
+                    </div>
+                <?php else: ?>
+                    <?php foreach ($featuredMedia as $item): ?>
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm hover-shadow">
+                                <div class="card-img-wrapper position-relative">
+                                    <?php if ($item['thumbnail']): ?>
+                                        <img src="<?php echo htmlspecialchars($item['thumbnail']); ?>" 
+                                             class="card-img-top" 
+                                             alt="<?php echo htmlspecialchars($item['name']); ?>"
+                                             style="height: 250px; object-fit: cover;">
+                                    <?php else: ?>
+                                        <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center" 
+                                             style="height: 250px;">
+                                            <i class="bi bi-film display-4 text-white"></i>
+                                        </div>
+                                    <?php endif; ?>
+                                    <?php if (isset($item['type']) && $item['type'] === 'youtube'): ?>
+                                        <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+                                            <i class="bi bi-youtube me-1"></i>YouTube
+                                        </span>
+                                    <?php endif; ?>
+                                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                        <div class="play-overlay">
+                                            <i class="bi bi-play-circle-fill display-4 text-white"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo htmlspecialchars($item['name']); ?></h5>
+                                    <p class="card-text text-muted">
+                                        <?php if (isset($item['type']) && $item['type'] === 'youtube'): ?>
+                                            YouTube Video
+                                        <?php else: ?>
+                                            Professional media package
+                                        <?php endif; ?>
+                                    </p>
+                                </div>
+                                <div class="card-footer bg-transparent border-0">
+                                    <a href="media-detail.php?id=<?php echo urlencode($item['id']); ?>" 
+                                       class="btn btn-primary w-100">
+                                        View Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <a href="media-list.php" class="btn btn-outline-primary btn-lg">
+                        View All Media Packages <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Virtual Tours Section -->
+    <section id="tours" class="py-5">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">360° Virtual Tours</h2>
+                    <p class="section-subtitle">Immersive virtual experiences for your spaces</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <?php if (empty($featuredTours)): ?>
+                    <div class="col-12 text-center py-5">
+                        <p class="text-muted">No virtual tours available yet.</p>
+                    </div>
+                <?php else: ?>
+                    <?php foreach ($featuredTours as $tour): ?>
+                        <div class="col-md-4">
+                            <div class="card h-100 shadow-sm hover-shadow">
+                                <div class="card-img-wrapper position-relative">
+                                    <?php if ($tour['thumbnail']): ?>
+                                        <img src="<?php echo htmlspecialchars($tour['thumbnail']); ?>" 
+                                             class="card-img-top" 
+                                             alt="<?php echo htmlspecialchars($tour['name']); ?>"
+                                             style="height: 250px; object-fit: cover;">
+                                    <?php else: ?>
+                                        <div class="card-img-top bg-primary d-flex align-items-center justify-content-center" 
+                                             style="height: 250px;">
+                                            <i class="bi bi-360 display-4 text-white"></i>
+                                        </div>
+                                    <?php endif; ?>
+                                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                        <div class="play-overlay">
+                                            <i class="bi bi-box-arrow-in-up-right display-4 text-white"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title"><?php echo htmlspecialchars($tour['name']); ?></h5>
+                                    <p class="card-text text-muted">360° Virtual Tour</p>
+                                </div>
+                                <div class="card-footer bg-transparent border-0">
+                                    <a href="tour-view.php?id=<?php echo urlencode($tour['id']); ?>" 
+                                       class="btn btn-primary w-100">
+                                        Explore Tour
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php endif; ?>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <a href="tours-list.php" class="btn btn-outline-primary btn-lg">
+                        View All Virtual Tours <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-5 bg-light">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-12 text-center">
+                    <h2 class="section-title">Our Packages</h2>
+                    <p class="section-subtitle">Choose the perfect package for your needs</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm text-center hover-shadow">
+                        <div class="card-body p-5">
+                            <div class="mb-4">
+                                <i class="bi bi-star display-4 text-primary"></i>
+                            </div>
+                            <h3 class="card-title mb-3 fw-bold">Basic Package</h3>
+                            <div class="display-4 fw-bold text-gradient mb-3">Coming Soon</div>
+                            <p class="text-muted mb-4">Perfect for small exhibitions</p>
+                            <ul class="list-unstyled text-start">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Basic features</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Standard quality</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Email support</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-lg text-center border-primary border-3 position-relative hover-shadow" style="transform: scale(1.05);">
+                        <div class="position-absolute top-0 start-50 translate-middle">
+                            <span class="badge bg-primary px-3 py-2">Most Popular</span>
+                        </div>
+                        <div class="card-body p-5 mt-3">
+                            <div class="mb-4">
+                                <i class="bi bi-star-fill display-4 text-primary"></i>
+                            </div>
+                            <h3 class="card-title mb-3 fw-bold">Professional Package</h3>
+                            <div class="display-4 fw-bold text-gradient mb-3">Coming Soon</div>
+                            <p class="text-muted mb-4">Ideal for medium-sized events</p>
+                            <ul class="list-unstyled text-start">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Advanced features</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>High quality</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Priority support</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Custom branding</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm text-center hover-shadow">
+                        <div class="card-body p-5">
+                            <div class="mb-4">
+                                <i class="bi bi-trophy display-4 text-primary"></i>
+                            </div>
+                            <h3 class="card-title mb-3 fw-bold">Enterprise Package</h3>
+                            <div class="display-4 fw-bold text-gradient mb-3">Coming Soon</div>
+                            <p class="text-muted mb-4">For large-scale exhibitions</p>
+                            <ul class="list-unstyled text-start">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>All features</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Premium quality</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>24/7 support</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Dedicated manager</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <p class="text-muted">Contact us for custom pricing and packages</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h2 class="section-title mb-4">About RoniPlus</h2>
+                    <p class="lead mb-4">
+                        RoniPlus is a leading provider of special exhibition media services, 
+                        specializing in 360° virtual tours and professional media packages.
+                    </p>
+                    <p class="mb-4">
+                        With years of experience in the industry, we help businesses and organizations 
+                        showcase their spaces and events through cutting-edge virtual reality technology 
+                        and high-quality media production.
+                    </p>
+                    <p class="mb-4">
+                        Our team of experts is dedicated to delivering exceptional results that exceed 
+                        expectations. We combine technical expertise with creative vision to create 
+                        immersive experiences that engage and inspire.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#contact" class="btn btn-primary">Contact Us</a>
+                        <a href="tours-list.php" class="btn btn-outline-primary">View Our Work</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="about-features">
+                        <div class="feature-item mb-4 p-4">
+                            <div class="d-flex align-items-start">
+                                <div class="feature-icon me-3 flex-shrink-0">
+                                    <i class="bi bi-award-fill"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-2">Professional Quality</h5>
+                                    <p class="text-muted mb-0">High-resolution 360° photography and professional video production</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-item mb-4 p-4">
+                            <div class="d-flex align-items-start">
+                                <div class="feature-icon me-3 flex-shrink-0">
+                                    <i class="bi bi-gear-fill"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-2">Custom Solutions</h5>
+                                    <p class="text-muted mb-0">Tailored packages to meet your specific needs and budget</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="feature-item mb-4 p-4">
+                            <div class="d-flex align-items-start">
+                                <div class="feature-icon me-3 flex-shrink-0">
+                                    <i class="bi bi-headset"></i>
+                                </div>
+                                <div>
+                                    <h5 class="fw-bold mb-2">Expert Support</h5>
+                                    <p class="text-muted mb-0">Dedicated team providing ongoing support and assistance</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <?php include 'includes/footer.php'; ?>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

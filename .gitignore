@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Environment
+.env
+.env.local
+
+# System files
+.DS_Store
+Thumbs.db
+*.log
+
+# Project folders (user uploaded content)
+tours/*
+!tours/README.txt
+media/*
+!media/README.txt
+
+# Keep folder structure but ignore content
+!tours/.gitkeep
+!media/.gitkeep
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary files
+*.tmp
+*.cache
