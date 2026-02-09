@@ -34,25 +34,17 @@ $featuredTours = array_slice($tours, 0, 3);
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="container">
-            <div class="row align-items-center min-vh-75">
+            <div class="row align-items-center">
                 <div class="col-lg-6">
                     <h1 class="display-3 fw-bold mb-4">Special Exhibition Media Services</h1>
-                    <p class="lead mb-4">
+                    <p class="lead mb-0">
                         Professional 360° Virtual Tours and Media Packages for exhibitions, events, and businesses.
                         Experience immersive virtual environments and high-quality media solutions.
                     </p>
-                    <div class="d-flex gap-3 flex-wrap">
-                        <a href="#media" class="btn btn-primary btn-lg">
-                            <i class="bi bi-play-circle me-2"></i>View Media Packages
-                        </a>
-                        <a href="#tours" class="btn btn-outline-primary btn-lg">
-                            <i class="bi bi-camera-video me-2"></i>Explore Virtual Tours
-                        </a>
-                    </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-6 text-center">
                     <div class="hero-image">
-                        <i class="bi bi-camera-reels display-1 text-primary"></i>
+                        <i class="bi bi-camera-reels display-1" style="color: #FF6600;"></i>
                     </div>
                 </div>
             </div>
@@ -64,7 +56,7 @@ $featuredTours = array_slice($tours, 0, 3);
         <div class="container">
             <div class="row mb-5">
                 <div class="col-12 text-center">
-                    <h2 class="section-title">Media Packages</h2>
+                    <h2 class="section-title">Media Packages Samples</h2>
                     <p class="section-subtitle">High-quality media solutions for your exhibitions</p>
                 </div>
             </div>
@@ -136,7 +128,7 @@ $featuredTours = array_slice($tours, 0, 3);
         <div class="container">
             <div class="row mb-5">
                 <div class="col-12 text-center">
-                    <h2 class="section-title">360° Virtual Tours</h2>
+                    <h2 class="section-title">360° Virtual Tours Samples</h2>
                     <p class="section-subtitle">Immersive virtual experiences for your spaces</p>
                 </div>
             </div>
@@ -201,67 +193,90 @@ $featuredTours = array_slice($tours, 0, 3);
                     <p class="section-subtitle">Choose the perfect package for your needs</p>
                 </div>
             </div>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm text-center hover-shadow">
-                        <div class="card-body p-5">
-                            <div class="mb-4">
-                                <i class="bi bi-star display-4 text-primary"></i>
+            <div class="row g-4 justify-content-center">
+                <!-- Package 1: Virtual Tour (Left) -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="card h-100 shadow-sm text-center hover-shadow pricing-card">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <i class="bi bi-360 display-4" style="color: #000C7B;"></i>
                             </div>
-                            <h3 class="card-title mb-3 fw-bold">Basic Package</h3>
-                            <div class="display-4 fw-bold text-gradient mb-3">Coming Soon</div>
-                            <p class="text-muted mb-4">Perfect for small exhibitions</p>
-                            <ul class="list-unstyled text-start">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Basic features</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Standard quality</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Email support</li>
+                            <h3 class="card-title mb-3 fw-bold" style="color: #000C7B;">Virtual Tour</h3>
+                            <div class="mb-3">
+                                <span class="display-5 fw-bold" style="color: #FF6600;">1,000</span>
+                                <span class="text-muted"> AED</span>
+                            </div>
+                            <p class="text-muted mb-3 small">4 Days Delivery</p>
+                            <ul class="list-unstyled text-start mb-4">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #FF6600;"></i>360° Photography</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #FF6600;"></i>Interactive Output</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #FF6600;"></i>Source Files Included</li>
                             </ul>
+                            <a href="#contact" class="btn btn-outline-primary w-100">Get Started</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-lg text-center border-primary border-3 position-relative hover-shadow" style="transform: scale(1.05);">
+                
+                <!-- Package 3: Golden Package (Center - Popular) -->
+                <div class="col-md-4 col-lg-4">
+                    <div class="card h-100 shadow-lg text-center border-3 position-relative hover-shadow pricing-card-popular" style="border-color: #FF6600 !important; transform: scale(1.05);">
                         <div class="position-absolute top-0 start-50 translate-middle">
-                            <span class="badge bg-primary px-3 py-2">Most Popular</span>
+                            <span class="badge px-4 py-2" style="background: linear-gradient(135deg, #FF6600, #E55A00); color: white; font-weight: 700;">Most Popular</span>
                         </div>
-                        <div class="card-body p-5 mt-3">
-                            <div class="mb-4">
-                                <i class="bi bi-star-fill display-4 text-primary"></i>
+                        <div class="card-body p-5 mt-4">
+                            <div class="mb-3">
+                                <i class="bi bi-trophy-fill display-3" style="color: #FF6600;"></i>
                             </div>
-                            <h3 class="card-title mb-3 fw-bold">Professional Package</h3>
-                            <div class="display-4 fw-bold text-gradient mb-3">Coming Soon</div>
-                            <p class="text-muted mb-4">Ideal for medium-sized events</p>
-                            <ul class="list-unstyled text-start">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Advanced features</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>High quality</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Priority support</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Custom branding</li>
+                            <h3 class="card-title mb-3 fw-bold" style="color: #000C7B;">Golden Package</h3>
+                            <div class="mb-3">
+                                <span class="display-4 fw-bold" style="color: #FF6600;">2,500</span>
+                                <span class="text-muted"> AED</span>
+                            </div>
+                            <p class="text-muted mb-3 small">Complete Solution</p>
+                            <ul class="list-unstyled text-start mb-4">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #FF6600;"></i>Full Video Documentation</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #FF6600;"></i>360° Virtual Tour</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #FF6600;"></i>Highlight Video (3 min)</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #FF6600;"></i>1 Reel</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #FF6600;"></i>10-20 Professional Photos</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #FF6600;"></i>Interview Recording</li>
                             </ul>
+                            <a href="#contact" class="btn btn-primary w-100">Get Started</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card h-100 shadow-sm text-center hover-shadow">
-                        <div class="card-body p-5">
-                            <div class="mb-4">
-                                <i class="bi bi-trophy display-4 text-primary"></i>
+                
+                <!-- Package 2: Video Documentation (Right) -->
+                <div class="col-md-4 col-lg-3">
+                    <div class="card h-100 shadow-sm text-center hover-shadow pricing-card">
+                        <div class="card-body p-4">
+                            <div class="mb-3">
+                                <i class="bi bi-camera-video display-4" style="color: #000C7B;"></i>
                             </div>
-                            <h3 class="card-title mb-3 fw-bold">Enterprise Package</h3>
-                            <div class="display-4 fw-bold text-gradient mb-3">Coming Soon</div>
-                            <p class="text-muted mb-4">For large-scale exhibitions</p>
-                            <ul class="list-unstyled text-start">
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>All features</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Premium quality</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>24/7 support</li>
-                                <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Dedicated manager</li>
+                            <h3 class="card-title mb-3 fw-bold" style="color: #000C7B;">Video Documentation</h3>
+                            <div class="mb-3">
+                                <span class="display-5 fw-bold" style="color: #FF6600;">2,000</span>
+                                <span class="text-muted"> AED</span>
+                            </div>
+                            <p class="text-muted mb-3 small">48 Hours Delivery</p>
+                            <ul class="list-unstyled text-start mb-4">
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #FF6600;"></i>Full Booth Videography</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #FF6600;"></i>Interview Recording</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #FF6600;"></i>Highlight Video (3 min)</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #FF6600;"></i>1 Reel</li>
+                                <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #FF6600;"></i>10-20 Professional Photos</li>
                             </ul>
+                            <a href="#contact" class="btn btn-outline-primary w-100">Get Started</a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row mt-4">
+            <div class="row mt-5">
                 <div class="col-12 text-center">
-                    <p class="text-muted">Contact us for custom pricing and packages</p>
+                    <p class="text-muted mb-3">Need a custom package? Contact us for personalized solutions</p>
+                    <a href="#contact" class="btn btn-outline-primary">
+                        <i class="bi bi-envelope me-2"></i>Contact Us
+                    </a>
                 </div>
             </div>
         </div>

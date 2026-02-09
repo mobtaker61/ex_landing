@@ -29,7 +29,7 @@ $media = getMedia();
         <div class="container">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h1 class="display-4 fw-bold mb-3">Media Packages</h1>
+                    <h1 class="display-4 fw-bold mb-3">Media Packages Samples</h1>
                     <p class="lead">Explore our collection of professional media packages</p>
                 </div>
             </div>

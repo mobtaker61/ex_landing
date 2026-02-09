@@ -31,19 +31,19 @@
                 <h5 class="mb-4" id="contact">Contact Information</h5>
                 <ul class="list-unstyled">
                     <li class="mb-3">
-                        <i class="bi bi-telephone-fill me-2 text-primary"></i>
+                        <i class="bi bi-telephone-fill me-2" style="color: #FF6600;"></i>
                         <a href="tel:+971522299108" class="text-white text-decoration-none">+971 52 229 9108</a>
                     </li>
                     <li class="mb-3">
-                        <i class="bi bi-envelope-fill me-2 text-primary"></i>
+                        <i class="bi bi-envelope-fill me-2" style="color: #FF6600;"></i>
                         <a href="mailto:media@roniplus.ae" class="text-white text-decoration-none">media@roniplus.ae</a>
                     </li>
                     <li class="mb-3">
-                        <i class="bi bi-geo-alt-fill me-2 text-primary"></i>
+                        <i class="bi bi-geo-alt-fill me-2" style="color: #FF6600;"></i>
                         <span class="text-light">217, Business Village B, Port Saeed, Dubai, UAE</span>
                     </li>
                     <li class="mb-3">
-                        <i class="bi bi-clock-fill me-2 text-primary"></i>
+                        <i class="bi bi-clock-fill me-2" style="color: #FF6600;"></i>
                         <span class="text-light">Mon - Fri: 9:00 AM - 6:00 PM</span>
                     </li>
                 </ul>
