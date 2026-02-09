@@ -17,6 +17,9 @@ tours/*
 media/*
 !media/README.txt
 
+# Exhibitions list (editable on server)
+exhibitions.txt
+
 # Keep folder structure but ignore content
 !tours/.gitkeep
 !media/.gitkeep

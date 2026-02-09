@@ -230,7 +230,7 @@ $featuredTours = array_slice($tours, 0, 3);
                                 <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #FF6600;"></i>Interactive Output</li>
                                 <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #FF6600;"></i>Source Files Included</li>
                             </ul>
-                            <a href="#contact" class="btn btn-outline-primary w-100">Get Started</a>
+                            <a href="request.php?package=virtual-tour" class="btn btn-outline-primary w-100">Request</a>
                         </div>
                     </div>
                 </div>
@@ -259,7 +259,7 @@ $featuredTours = array_slice($tours, 0, 3);
                                 <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #FF6600;"></i>10-20 Professional Photos</li>
                                 <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #FF6600;"></i>Interview Recording</li>
                             </ul>
-                            <a href="#contact" class="btn btn-primary w-100">Get Started</a>
+                            <a href="request.php?package=golden-package" class="btn btn-primary w-100">Request</a>
                         </div>
                     </div>
                 </div>
@@ -284,7 +284,7 @@ $featuredTours = array_slice($tours, 0, 3);
                                 <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #FF6600;"></i>1 Reel</li>
                                 <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: #FF6600;"></i>10-20 Professional Photos</li>
                             </ul>
-                            <a href="#contact" class="btn btn-outline-primary w-100">Get Started</a>
+                            <a href="request.php?package=video-documentation" class="btn btn-outline-primary w-100">Request</a>
                         </div>
                     </div>
                 </div>
