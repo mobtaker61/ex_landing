@@ -46,8 +46,7 @@ if (!$tour) {
     <header class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="index.php">
-                <img src="assets/images/logo.png" alt="RoniPlus Logo" height="40" class="me-2" onerror="this.style.display='none'">
-                <span class="fw-bold text-primary fs-4">RoniPlus</span>
+                <img src="assets/images/logo.png" alt="RoniPlus" height="40" class="me-2" onerror="this.style.display='none'">
             </a>
             <div class="ms-auto">
                 <a href="tours-list.php" class="btn btn-outline-primary">

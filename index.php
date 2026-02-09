@@ -14,7 +14,7 @@ $featuredTours = array_slice($tours, 0, 3);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Special Exhibition Media Services - RoniPlus</title>
+    <title>Special Exhibition Media Services | RoniPlus</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -68,47 +68,48 @@ $featuredTours = array_slice($tours, 0, 3);
                 <?php else: ?>
                     <?php foreach ($featuredMedia as $item): ?>
                         <div class="col-md-4">
-                            <div class="card h-100 shadow-sm hover-shadow">
-                                <div class="card-img-wrapper position-relative">
-                                    <?php if ($item['thumbnail']): ?>
-                                        <img src="<?php echo htmlspecialchars($item['thumbnail']); ?>" 
-                                             class="card-img-top" 
-                                             alt="<?php echo htmlspecialchars($item['name']); ?>"
-                                             style="height: 250px; object-fit: cover;">
-                                    <?php else: ?>
-                                        <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center" 
-                                             style="height: 250px;">
-                                            <i class="bi bi-film display-4 text-white"></i>
-                                        </div>
-                                    <?php endif; ?>
-                                    <?php if (isset($item['type']) && $item['type'] === 'youtube'): ?>
-                                        <span class="badge bg-danger position-absolute top-0 end-0 m-2">
-                                            <i class="bi bi-youtube me-1"></i>YouTube
-                                        </span>
-                                    <?php endif; ?>
-                                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                                        <div class="play-overlay">
-                                            <i class="bi bi-play-circle-fill display-4 text-white"></i>
+                            <a href="media-detail.php?id=<?php echo urlencode($item['id']); ?>" class="text-decoration-none">
+                                <div class="card h-100 shadow-sm hover-shadow clickable-card">
+                                    <div class="card-img-wrapper position-relative">
+                                        <?php if ($item['thumbnail']): ?>
+                                            <img src="<?php echo htmlspecialchars($item['thumbnail']); ?>" 
+                                                 class="card-img-top" 
+                                                 alt="<?php echo htmlspecialchars($item['name']); ?>"
+                                                 style="height: 250px; object-fit: cover;">
+                                        <?php else: ?>
+                                            <div class="card-img-top bg-secondary d-flex align-items-center justify-content-center" 
+                                                 style="height: 250px;">
+                                                <i class="bi bi-film display-4 text-white"></i>
+                                            </div>
+                                        <?php endif; ?>
+                                        <?php if (isset($item['type']) && $item['type'] === 'youtube'): ?>
+                                            <span class="badge bg-danger position-absolute top-0 end-0 m-2">
+                                                <i class="bi bi-youtube me-1"></i>YouTube
+                                            </span>
+                                        <?php endif; ?>
+                                        <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                            <div class="play-overlay">
+                                                <i class="bi bi-play-circle-fill display-4 text-white"></i>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php echo htmlspecialchars($item['name']); ?></h5>
+                                        <p class="card-text text-muted">
+                                            <?php if (isset($item['type']) && $item['type'] === 'youtube'): ?>
+                                                YouTube Video
+                                            <?php else: ?>
+                                                Professional media package
+                                            <?php endif; ?>
+                                        </p>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0">
+                                        <span class="btn btn-primary w-100">
+                                            View Details <i class="bi bi-arrow-right ms-2"></i>
+                                        </span>
+                                    </div>
                                 </div>
-                                <div class="card-body">
-                                    <h5 class="card-title"><?php echo htmlspecialchars($item['name']); ?></h5>
-                                    <p class="card-text text-muted">
-                                        <?php if (isset($item['type']) && $item['type'] === 'youtube'): ?>
-                                            YouTube Video
-                                        <?php else: ?>
-                                            Professional media package
-                                        <?php endif; ?>
-                                    </p>
-                                </div>
-                                <div class="card-footer bg-transparent border-0">
-                                    <a href="media-detail.php?id=<?php echo urlencode($item['id']); ?>" 
-                                       class="btn btn-primary w-100">
-                                        View Details
-                                    </a>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>
@@ -140,36 +141,37 @@ $featuredTours = array_slice($tours, 0, 3);
                 <?php else: ?>
                     <?php foreach ($featuredTours as $tour): ?>
                         <div class="col-md-4">
-                            <div class="card h-100 shadow-sm hover-shadow">
-                                <div class="card-img-wrapper position-relative">
-                                    <?php if ($tour['thumbnail']): ?>
-                                        <img src="<?php echo htmlspecialchars($tour['thumbnail']); ?>" 
-                                             class="card-img-top" 
-                                             alt="<?php echo htmlspecialchars($tour['name']); ?>"
-                                             style="height: 250px; object-fit: cover;">
-                                    <?php else: ?>
-                                        <div class="card-img-top bg-primary d-flex align-items-center justify-content-center" 
-                                             style="height: 250px;">
-                                            <i class="bi bi-360 display-4 text-white"></i>
-                                        </div>
-                                    <?php endif; ?>
-                                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
-                                        <div class="play-overlay">
-                                            <i class="bi bi-box-arrow-in-up-right display-4 text-white"></i>
+                            <a href="tour-view.php?id=<?php echo urlencode($tour['id']); ?>" class="text-decoration-none">
+                                <div class="card h-100 shadow-sm hover-shadow clickable-card">
+                                    <div class="card-img-wrapper position-relative">
+                                        <?php if ($tour['thumbnail']): ?>
+                                            <img src="<?php echo htmlspecialchars($tour['thumbnail']); ?>" 
+                                                 class="card-img-top" 
+                                                 alt="<?php echo htmlspecialchars($tour['name']); ?>"
+                                                 style="height: 250px; object-fit: cover;">
+                                        <?php else: ?>
+                                            <div class="card-img-top bg-primary d-flex align-items-center justify-content-center" 
+                                                 style="height: 250px;">
+                                                <i class="bi bi-360 display-4 text-white"></i>
+                                            </div>
+                                        <?php endif; ?>
+                                        <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                                            <div class="play-overlay">
+                                                <i class="bi bi-box-arrow-in-up-right display-4 text-white"></i>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?php echo htmlspecialchars($tour['name']); ?></h5>
+                                        <p class="card-text text-muted">360° Virtual Tour</p>
+                                    </div>
+                                    <div class="card-footer bg-transparent border-0">
+                                        <span class="btn btn-primary w-100">
+                                            Explore Tour <i class="bi bi-arrow-right ms-2"></i>
+                                        </span>
+                                    </div>
                                 </div>
-                                <div class="card-body">
-                                    <h5 class="card-title"><?php echo htmlspecialchars($tour['name']); ?></h5>
-                                    <p class="card-text text-muted">360° Virtual Tour</p>
-                                </div>
-                                <div class="card-footer bg-transparent border-0">
-                                    <a href="tour-view.php?id=<?php echo urlencode($tour['id']); ?>" 
-                                       class="btn btn-primary w-100">
-                                        Explore Tour
-                                    </a>
-                                </div>
-                            </div>
+                            </a>
                         </div>
                     <?php endforeach; ?>
                 <?php endif; ?>

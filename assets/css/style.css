@@ -378,6 +378,25 @@ html {
     border: 1px solid rgba(0, 12, 123, 0.08);
 }
 
+.clickable-card {
+    cursor: pointer;
+    color: inherit;
+}
+
+.clickable-card:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.clickable-card .card-title {
+    color: var(--brand-navy);
+    transition: color 0.3s ease;
+}
+
+.clickable-card:hover .card-title {
+    color: var(--brand-orange);
+}
+
 .card::before {
     content: '';
     position: absolute;
