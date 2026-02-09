@@ -10,11 +10,21 @@ $featuredMedia = array_slice($media, 0, 3);
 $featuredTours = array_slice($tours, 0, 3);
 ?>
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" itemscope itemtype="https://schema.org/Organization">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Special Exhibition Media Services | RoniPlus</title>
+    
+    <?php
+    // SEO and Social Media Meta Tags
+    $pageTitle = "Special Exhibition Media Services | RoniPlus";
+    $pageDescription = "Professional 360° Virtual Tours and Media Packages for exhibitions, events, and businesses. Experience immersive virtual environments and high-quality media solutions in Dubai, UAE.";
+    $pageImage = "assets/images/logo.png";
+    $pageUrl = "index.php";
+    $pageType = "website";
+    $keywords = "virtual tour, 360 tour, media packages, exhibition services, virtual reality, Dubai, UAE, RoniPlus";
+    include 'includes/meta-tags.php';
+    ?>
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
@@ -158,7 +168,7 @@ $featuredTours = array_slice($tours, 0, 3);
                                         <?php else: ?>
                                             <div class="card-img-top bg-primary d-flex align-items-center justify-content-center" 
                                                  style="height: 250px;">
-                                                <i class="bi bi-360 display-4 text-white"></i>
+                                                <i class="bi bi-vr display-4 text-white"></i>
                                             </div>
                                         <?php endif; ?>
                                         <div class="card-img-overlay d-flex align-items-center justify-content-center">
@@ -207,7 +217,7 @@ $featuredTours = array_slice($tours, 0, 3);
                     <div class="card h-100 shadow-sm text-center hover-shadow pricing-card">
                         <div class="card-body p-4">
                             <div class="mb-3">
-                                <i class="bi bi-360 display-4" style="color: #000C7B;"></i>
+                                <i class="bi bi-vr display-4" style="color: #000C7B;"></i>
                             </div>
                             <h3 class="card-title mb-3 fw-bold" style="color: #000C7B;">Virtual Tour</h3>
                             <div class="mb-3">

@@ -3,11 +3,21 @@ require_once __DIR__ . '/includes/functions.php';
 $tours = getTours();
 ?>
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" itemscope itemtype="https://schema.org/CollectionPage">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Virtual Tours | RoniPlus</title>
+    <title>360° Virtual Tours Samples | RoniPlus</title>
+    
+    <?php
+    // SEO and Social Media Meta Tags
+    $pageTitle = "360° Virtual Tours Samples | RoniPlus";
+    $pageDescription = "Explore our collection of immersive 360° virtual tours. Experience interactive virtual environments for exhibitions, events, and business spaces.";
+    $pageImage = "assets/images/logo.png";
+    $pageUrl = "tours-list.php";
+    $pageType = "website";
+    $keywords = "360 virtual tour, virtual reality, interactive tour, panoramic tour, exhibition tour, Dubai, UAE";
+    include 'includes/meta-tags.php';
+    ?>
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
@@ -47,7 +57,7 @@ $tours = getTours();
         <div class="container">
             <?php if (empty($tours)): ?>
                 <div class="text-center py-5">
-                    <i class="bi bi-360 display-1 text-muted mb-3"></i>
+                    <i class="bi bi-vr display-1 text-muted mb-3"></i>
                     <h3 class="mb-3">No Virtual Tours Available</h3>
                     <p class="text-muted">Virtual tours will appear here once they are uploaded.</p>
                     <a href="index.php" class="btn btn-primary mt-3">Back to Home</a>
@@ -67,7 +77,7 @@ $tours = getTours();
                                         <?php else: ?>
                                             <div class="card-img-top bg-primary d-flex align-items-center justify-content-center" 
                                                  style="height: 200px;">
-                                                <i class="bi bi-360 display-4 text-white"></i>
+                                                <i class="bi bi-vr display-4 text-white"></i>
                                             </div>
                                         <?php endif; ?>
                                         <div class="card-img-overlay d-flex align-items-center justify-content-center">

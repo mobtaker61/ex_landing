@@ -24,11 +24,30 @@ if (!$mediaItem) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" itemscope itemtype="https://schema.org/VideoObject">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($mediaItem['name']); ?> - Media Package | RoniPlus</title>
+    
+    <?php
+    // SEO and Social Media Meta Tags
+    $siteUrl = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+    $siteUrl .= "://" . $_SERVER['HTTP_HOST'];
+    $siteUrl .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+    $siteUrl = rtrim($siteUrl, '/');
+    
+    $pageTitle = htmlspecialchars($mediaItem['name']) . " - Media Package | RoniPlus";
+    $pageDescription = "Watch " . htmlspecialchars($mediaItem['name']) . " - Professional media package by RoniPlus. High-quality video documentation and media solutions for exhibitions.";
+    $pageImage = isset($mediaItem['thumbnail']) && $mediaItem['thumbnail'] ? $mediaItem['thumbnail'] : "assets/images/logo.png";
+    $pageUrl = "media-detail.php?id=" . urlencode($mediaItem['id']);
+    $pageType = "video.other";
+    $keywords = htmlspecialchars($mediaItem['name']) . ", media package, video documentation, exhibition media, RoniPlus";
+    $breadcrumbItems = [
+        ['name' => 'Media Packages', 'url' => $siteUrl . '/media-list.php'],
+        ['name' => htmlspecialchars($mediaItem['name']), 'url' => $siteUrl . '/' . $pageUrl]
+    ];
+    include 'includes/meta-tags.php';
+    ?>
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">

@@ -3,11 +3,21 @@ require_once __DIR__ . '/includes/functions.php';
 $media = getMedia();
 ?>
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" itemscope itemtype="https://schema.org/CollectionPage">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Packages | RoniPlus</title>
+    <title>Media Packages Samples | RoniPlus</title>
+    
+    <?php
+    // SEO and Social Media Meta Tags
+    $pageTitle = "Media Packages Samples | RoniPlus";
+    $pageDescription = "Explore our collection of professional media packages including video documentation, highlight videos, reels, and professional photography for exhibitions and events.";
+    $pageImage = "assets/images/logo.png";
+    $pageUrl = "media-list.php";
+    $pageType = "website";
+    $keywords = "media packages, video documentation, highlight video, exhibition media, professional photography, Dubai, UAE";
+    include 'includes/meta-tags.php';
+    ?>
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">

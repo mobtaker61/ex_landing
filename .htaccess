@@ -34,4 +34,10 @@ AddDefaultCharset UTF-8
     Header set X-Content-Type-Options "nosniff"
     Header set X-Frame-Options "SAMEORIGIN"
     Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
 </IfModule>
+
+# SEO: Prevent indexing of admin/test files
+<FilesMatch "^(\.htaccess|\.git|\.gitignore|README|INSTALLATION|TESTING|FAVICON_README)">
+    Header set X-Robots-Tag "noindex, nofollow"
+</FilesMatch>

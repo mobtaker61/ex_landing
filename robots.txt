@@ -1,0 +1,21 @@
+User-agent: *
+Allow: /
+
+# Disallow admin and system files
+Disallow: /includes/
+Disallow: /api/
+Disallow: /.git/
+Disallow: /.htaccess
+Disallow: /README.md
+Disallow: /INSTALLATION.md
+Disallow: /TESTING.md
+
+# Allow important files
+Allow: /assets/
+Allow: /tours/
+Allow: /media/
+
+# Sitemap (update with your actual domain)
+# You can use either static sitemap.xml or dynamic generate-sitemap.php
+Sitemap: https://roniplus.ae/sitemap.xml
+Sitemap: https://roniplus.ae/generate-sitemap.php

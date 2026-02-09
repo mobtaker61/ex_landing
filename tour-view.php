@@ -24,11 +24,30 @@ if (!$tour) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" itemscope itemtype="https://schema.org/WebPage">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo htmlspecialchars($tour['name']); ?> - Virtual Tour | RoniPlus</title>
+    
+    <?php
+    // SEO and Social Media Meta Tags
+    $siteUrl = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+    $siteUrl .= "://" . $_SERVER['HTTP_HOST'];
+    $siteUrl .= str_replace(basename($_SERVER['SCRIPT_NAME']), '', $_SERVER['SCRIPT_NAME']);
+    $siteUrl = rtrim($siteUrl, '/');
+    
+    $pageTitle = htmlspecialchars($tour['name']) . " - 360° Virtual Tour | RoniPlus";
+    $pageDescription = "Explore " . htmlspecialchars($tour['name']) . " - Interactive 360° virtual tour by RoniPlus. Experience immersive virtual reality for exhibitions and events.";
+    $pageImage = isset($tour['thumbnail']) && $tour['thumbnail'] ? $tour['thumbnail'] : "assets/images/logo.png";
+    $pageUrl = "tour-view.php?id=" . urlencode($tour['id']);
+    $pageType = "website";
+    $keywords = htmlspecialchars($tour['name']) . ", 360 virtual tour, interactive tour, panoramic view, exhibition tour, RoniPlus";
+    $breadcrumbItems = [
+        ['name' => 'Virtual Tours', 'url' => $siteUrl . '/tours-list.php'],
+        ['name' => htmlspecialchars($tour['name']), 'url' => $siteUrl . '/' . $pageUrl]
+    ];
+    include 'includes/meta-tags.php';
+    ?>
     
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
