@@ -192,4 +192,5 @@ if (isset($pageType) && $pageType === 'article') {
     ], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
     echo '</script>';
 }
+include __DIR__ . '/analytics.php';
 ?>
